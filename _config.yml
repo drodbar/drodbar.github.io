@@ -3,8 +3,8 @@ title : drodbar
 description: "Some thoughts, code snippets, brief howtos and such for my personal reuse and at everybody's disposal by Diego Rodriguez."
 url: drodbar.github.io
 
-author :
-  name : Diego Rodriguez Bartolome
+author : Diego Rodriguez Bartolome
+author_details:
   email: di.rod.bar@gmail.com
   github : drodbar
   twitter : wikiego
