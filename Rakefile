@@ -104,6 +104,12 @@ desc "Install libs required by theme"
 task :js do
   puts "Downloading and installing required javascript plugins".blue
   system('npm install')
+  ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+   "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+   "node_modules/jquery/dist/jquery.min.js"].each do |js_lib|
+     puts "Copy #{js_lib} to js/"
+     FileUtils.cp(js_lib, 'js')
+   end
 end # task :js
 
 
