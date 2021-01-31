@@ -272,6 +272,7 @@ DEPENDENCIES
   colorize
   github-pages
   github-pages-health-check
+  jekyll-feed
   jekyll-seo
   jekyll-seo-tag
   jekyll-sitemap
