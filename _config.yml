@@ -2,7 +2,6 @@
 title : drodbar
 description: "Some thoughts, code snippets, brief howtos and such for my personal reuse and at everybody's disposal by Diego Rodriguez."
 url: drodbar.github.io
-source: 
 
 author :
   name : Diego Rodriguez Bartolome
@@ -12,6 +11,7 @@ author :
   linkedin: diego-rodriguez-bartolome
 
   plugins:
+  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-tidy
