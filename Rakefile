@@ -74,7 +74,7 @@ task :icons do
   name_pre = "images/apple-touch-icon-%dx%d-precomposed.png"
 
   puts "Deleting previous images".red
-  FileList["images/favicon.ico", "images/apple-touch-ico*.png"].each do |img|
+  FileList["favicon.ico", "images/apple-touch-ico*.png"].each do |img|
     puts "Deleting #{img}".red
     File.delete img
   end
