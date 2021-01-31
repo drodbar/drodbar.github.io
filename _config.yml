@@ -3,8 +3,8 @@ title : drodbar
 description: "Some thoughts, code snippets, brief howtos and such for my personal reuse and at everybody's disposal by Diego Rodriguez."
 url: "https://drodbar.github.io"
 
-author : Diego Rodriguez Bartolome
-author_details:
+author :
+  name: Diego Rodriguez Bartolome
   email: di.rod.bar@gmail.com
   github : drodbar
   twitter : wikiego
@@ -14,22 +14,22 @@ author_details:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-tidy
 
 # Build options
 permalink: /:title
 
 include:
-  - _pages
+  - js
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
+  - Gemfile*
   - Rakefile
-  - Procfile.dev
-  - package.json
+  - package*.json
   - .jekyll-metadata
   - node_modules
-  - assets/js
+  - README.md
+  - LICENSE
 
 
 # Markdown
@@ -42,18 +42,18 @@ kramdown:
 highlighter: rouge
 
 ## Sass
-#sass:
-#  sass_dir: _sass
-#  load_paths:
-#    - _sass
-#    - node_modules
-#  style:
-#    compressed
+sass:
+  sass_dir: _sass
+  load_paths:
+    - _sass
+    - node_modules
+  style:
+    compressed
 
 # Tidy
-#jekyll_tidy:
-#  exclude: []
-#  compress_html: true
+jekyll_tidy:
+  exclude: []
+  compress_html: true
 
 # Analytics
 analytics: UA-164176134-1

@@ -1,9 +1,8 @@
-@use 'blogster';
 
 .site-footer {
   height: 100%;
-  //background-color: blogster.$footer-color;
-  border-top: blogster.$navlink-color blogster.$bordertop solid;
+  //background-color: $footer-color;
+  border-top: $navlink-color $bordertop solid;
   margin-top: 0.15rem;
   margin-bottom: 0.15rem;
 
@@ -13,7 +12,7 @@
   }
   p {
     margin-bottom: 0;
-    color: $medium-gray-color;
+    //color: $medium-gray-color;
     float: left;
   }
 }
@@ -65,13 +64,13 @@
 
   a, li {
     display: inline-block;
-    color: $light-gray-color;
+    //color: $light-gray-color;
     text-decoration: none;
     transition: color 0.1s ease-in;
     -webkit-transition: color 0.1s ease-in;
 
     a:hover,svg:hover {
-      color: blogster.$main-color;
+      color: $main-color;
     }
   }
 

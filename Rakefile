@@ -9,6 +9,7 @@ require 'Digest'
 
 POSTS = ENV['dir'] || File.join('.', '_posts')
 
+
 ###
 # Based on jekyll-bootstrap's Rakefile.
 # Thanks, @plusjade
@@ -30,7 +31,7 @@ task :post do
   end
   filename = File.join(POSTS, "#{date}-#{slug}.md")
   if File.exist?(filename)
-    print "#{filename} already exists, shall we overwrite [y/n] ".yellow
+    print "#{filename} already exists, shall we overwrite [y/n] ".blue
     overwrite = STDIN.gets.strip.downcase
     abort("[ERROR] File overwrite aborted") if overwrite != 'y'
   end
@@ -45,19 +46,22 @@ task :post do
   end
 end # task :post
 
-desc "Launch pro like env"
-task :start => :build do
-  system "foreman start"
+
+desc "Launch in devel mode"
+task :devel do
+  system "JEKYLL_ENV=development bundle exec jekyll serve --watch --drafts --incremental"
+end # task :devel
+
+
+desc "Launch in preview mode"
+task :preview do
+  system " bundle exec jekyll serve --watch --incremental"
 end # task :preview
 
-desc "Launch preview environment"
-task :preview => :build do
-  system "foreman start -f Procfile.dev"
-end # task :preview
 
 desc "Generate icons based on gravatar email"
 task :icons do
-  puts "Getting author email from _config.yml...".yellow
+  puts "Getting author email from _config.yml...".blue
   config = YAML.load_file('_config.yml')
   author_email = config['author']['email']
   gravatar_id = Digest::MD5.hexdigest(author_email)
@@ -66,7 +70,7 @@ task :icons do
   origin = "images/about.png"
   File.delete origin if File.exist? origin
 
-  puts "Downloading base image file from gravatar...".yellow
+  puts "Downloading base image file from gravatar...".blue
   open(origin, 'wb') do |file|
     file << open(base_url).read
   end
@@ -75,39 +79,47 @@ task :icons do
 
   puts "Deleting previous images".red
   FileList["favicon.ico", "images/apple-touch-ico*.png"].each do |img|
-    puts "Deleting #{img}".red
-    File.delete img
+    if File.exist? img
+      puts "Deleting #{img}".red
+      File.delete img
+    end
   end
 
-  puts "Generating new images".yellow
-  puts "Generating images/favicon.ico...".yellow
+  puts "Generating favicon.ico...".blue
   Magick::Image::read(origin).first.resize(32, 32)
-      .write("images/favicon.ico")
+      .write("favicon.ico")
 
   [144, 114, 72, 57].each do |size|
-    puts "Generating #{size}x#{size} icon...".yellow
+    img_name = name_pre % [size, size]
+    puts "Generating #{img_name} icon...".blue
       Magick::Image::read(origin).first.resize(size, size)
-        .write(name_pre % [size, size])
+        .write(img_name)
   end
   puts "Cleaning up #{origin}...".red
-  File.delete origin
+  File.delete origin if File.exist?(origin)
 end # task :icons
 
+
 desc "Install libs required by theme"
-task :build do
-  #puts "Downloading and installing required javascript plugins".blue
-  #system('npm install')
-  #puts "Build using custom npm script 'build'".blue
-  #system('npm run build')
-  puts "Build site".blue
-  puts `bundle exec jekyll build --incremental`
-end # task :build
+task :js do
+  puts "Downloading and installing required javascript plugins".blue
+  system('npm install')
+end # task :js
+
+
+desc "Prepare repository (icons + js)"
+task :prepare => [:icons, :js]
+
 
 desc "Clean site"
 task :clean do
   puts "Clean Jekyll's site".red
   system('bundle exec jekyll clean')
-  puts "Remove css node_modules assets/dist".red
-  system('rm -rf css node_modules assets/dist')
 end # task :clean
+
+desc "Purge site"
+task :purge => :clean do
+  puts "Purge Jekyll's site".red
+  system('rm -vrf node_modules/ favicon.ico images/apple-touch-ico*')
+end # task :purge
 

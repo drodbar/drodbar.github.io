@@ -1,11 +1,12 @@
-@charset 'UTF-8';
+---
+---
 
-@use 'blogster';
+@charset 'UTF-8';
 
 @import 'bootstrap/scss/bootstrap';
 
-@import 'navbar';
 @import 'variables';
+@import 'navbar';
 @import 'footer';
 @import 'pygments';
 
@@ -15,13 +16,12 @@ $font-size-base: 15px;
 $headings-font-weight: 100;
 
 
-
 .container {
   background: white;
   opacity: 1;
   max-width: 820px;
-  border-left: blogster.$navlink-color blogster.$borderleft solid;
-  border-right: blogster.$navlink-color blogster.$borderright solid;
+  border-left: $navlink-color $borderleft solid;
+  border-right: $navlink-color $borderright solid;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   background-size: auto;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  //background-color: blogster.$footer-color;
+  //background-color: $footer-color;
   //padding-top: 50px;
   a {
     text-transform: none;
@@ -39,7 +39,7 @@ body {
     &:focus {
       text-decoration: none;
       //font-weight: $font-weight-bold;
-      color: blogster.$main-color;
+      color: $main-color;
     }
   }
 }
@@ -303,8 +303,8 @@ figure.highlight, div.highlight {
 .btn-blogster {
   vertical-align: baseline;
   // color
-  color: blogster.$main-color;
-  border-color: blogster.$main-color;
+  color: $main-color;
+  border-color: $main-color;
   // shape
   padding: .0rem .2rem;
   border-radius: .4rem;
@@ -314,7 +314,7 @@ figure.highlight, div.highlight {
   transition:  color 0.15s easy-in-out, background-color 0.1s easy-out;
   -webkit-transition:  color 0.15s easy-in-out, background-color 0.1s easy-out;
   &:hover {
-    background-color: blogster.$main-color;
+    background-color: $main-color;
     color: white;
   }
   a {
@@ -329,7 +329,7 @@ figure.highlight, div.highlight {
 ////
 $mild-gray: rgb(201, 201, 201);
 $lightest-gray: #ccc;
-$link: blogster.$main-color;
+$link: $main-color;
 ////
 
 ul#markdown-toc {
@@ -339,7 +339,7 @@ ul#markdown-toc {
   margin-right: $spacing-unit / 2;
 
   font-size: $base-font-size*0.8;
-  background-color: blogster.$toc-color;
+  background-color: $toc-color;
 
 
   ul {

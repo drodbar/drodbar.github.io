@@ -1,6 +1,7 @@
 # Jekyll and NPM build directories
 _site
 node_modules
+css/main.css
 
 # temp files
 Thumbs.db
