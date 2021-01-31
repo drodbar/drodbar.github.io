@@ -1,4 +1,25 @@
-_site/
-.sass-cache/
-.jekyll-cache/
+# Jekyll and NPM build directories
+_site
+node_modules
+assets/dist
+css
+
+# temp files
+Thumbs.db
+.DS_Store
+
+!.gitkeep
+
+# Ruby dotfiles
+.rbenv-version
+.rvmrc
+
+# vi[m] swap files
+*~
+
+# Jekyll runtime temp and cache
 .jekyll-metadata
+.sass-cache/
+
+# development files
+*/*.css.map

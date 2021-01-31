@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.91 r13725"
+   version="1.1"
+   id="svg2"
+   height="1000"
+   width="635.90002"
+   sodipodi:docname="linkedin.svg"
+   viewBox="0 0 635.90002 1000">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.537"
+     inkscape:cx="731.84357"
+     inkscape:cy="574.4879"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     showborder="true"
+     inkscape:showpageshadow="false">
+    <sodipodi:guide
+       id="guide45"
+       inkscape:label="baseline"
+       position="0,253"
+       orientation="0,1" />
+    <sodipodi:guide
+       id="guide47"
+       inkscape:label="ascender"
+       position="0,945"
+       orientation="0,1" />
+    <sodipodi:guide
+       id="guide49"
+       inkscape:label="caps"
+       position="0,896"
+       orientation="0,1" />
+    <sodipodi:guide
+       id="guide51"
+       inkscape:label="xheight"
+       position="0,729"
+       orientation="0,1" />
+    <sodipodi:guide
+       id="guide53"
+       inkscape:label="descender"
+       position="0,28"
+       orientation="0,1" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1" />
+  <path
+     style="fill:currentColor"
+     inkscape:connector-curvature="0"
+     id="linkedin"
+     d="m 69.86134,70.731108 c -39.02193,0 -70.65659,30.295622 -70.65659,67.665782 0,37.37168 31.63466,67.66575 70.65659,67.66575 39.02351,0 70.65656,-30.29407 70.65656,-67.66575 0,-37.37016 -31.63305,-67.665782 -70.65656,-67.665782 z m -70.65659,202.998832 0,473.66186 141.31315,0 0,-473.66186 z m 211.97135,0 0,473.66186 141.31315,0 0,-270.66457 c 0,-37.37018 31.63467,-67.66577 70.65658,-67.66577 39.02192,0 70.65658,30.29559 70.65658,67.66577 l 0,270.66457 141.31316,0 0,-304.49746 c 0,-93.42768 -71.17439,-169.1644 -158.97648,-169.1644 -49.95532,0 -94.50643,45.67908 -123.64984,84.01951 l 0,-84.01951 z" />
+</svg>

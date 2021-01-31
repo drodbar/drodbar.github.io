@@ -1,0 +1,33 @@
+{
+  "name": "blogster-jekyll-theme",
+  "license": "MIT",
+  "scripts": {
+    "mkdir-js": "mkdirp assets/dist",
+    "uglify-js": "uglifyjs -c -m --source-map -o assets/dist/main.min.js -- assets/dist/main.js",
+    "concat-js": "concat node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js js/blogster.js -o assets/dist/main.js",
+    "dev:build-js": "npm-run-all --serial mkdir-js concat-js",
+    "build-js": "npm-run-all --serial mkdir-js concat-js uglify-js",
+    "watch-js": "onchange 'js/**/*.js' -- npm run build-js",
+    "build-sass": "/usr/local/bin/sass --no-source-map --color -s compressed -I node_modules _sass/main.scss:css/main.css",
+    "dev:build-sass": "/usr/local/bin/sass --source-map-urls=absolute --color -I node_modules _sass/main.scss:css/main.css",
+    "watch-sass": "onchange -i _sass -- npm rum build-sass",
+    "dev:build": "npm-run-all --parallel dev:build-*",
+    "build": "npm-run-all --parallel build-*",
+    "watch": "npm-run-all --parallel watch-*"
+  },
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "jshint": "2.11.0",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.0.0",
+    "sass": "^1.32.5",
+    "uglify-js": "^3.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "html-minifier": "^4.0.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}

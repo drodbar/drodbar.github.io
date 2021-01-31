@@ -1,0 +1,24 @@
+---
+layout: layout
+title: Categories
+permalink: /category
+---
+
+
+<section class="content">
+  <h1>Categories</h1>
+  {%- assign first = 1 -%}
+  <ul class="listing">
+  {%- for site_category in site.categories -%}
+      {%- assign category_name = site_category[0] -%}
+      {%- assign site_category_posts = site_category[1] | size -%}
+            {%- assign category_posts = site_category_posts -%}
+            {%- if category_posts > 0 -%}
+            <li>
+                <span class="category-count">{{ category_posts }} posts</span>
+                 <a class="btn btn-blogster" href="{{ page.url }}/{{ category_name }}">{{ category_name | escape }}</a>
+            </li>
+            {%- endif -%}
+    {%- endfor -%}
+    <ul>
+</section>

@@ -1,0 +1,82 @@
+@use 'blogster';
+
+.site-footer {
+  height: 100%;
+  //background-color: blogster.$footer-color;
+  border-top: blogster.$navlink-color blogster.$bordertop solid;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
+
+  .container {
+    //background: black;
+    opacity: 80%;
+  }
+  p {
+    margin-bottom: 0;
+    color: $medium-gray-color;
+    float: left;
+  }
+}
+
+.social {
+
+  // vertical alignment
+  display: flex;
+  justify-content: center;
+  // horizontal alignment
+  align-items: center;
+  // remove list lefthandside space
+  padding-left: 0px;
+  padding-bottom: 0.1rem;
+  padding-top: 0.11rem;
+  // remove extra bottom margin
+  margin: 0;
+
+
+  #authorname {
+    padding: 0px 5px;
+
+    &::before {
+      content: '•';
+    }
+    &::after {
+      content: '•';
+    }
+  }
+
+  #copyleft:before {
+    content: '\00a9';
+    display: inline-block;
+    -o-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+  }
+
+
+  a {
+    padding-right: 8px;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  a, li {
+    display: inline-block;
+    color: $light-gray-color;
+    text-decoration: none;
+    transition: color 0.1s ease-in;
+    -webkit-transition: color 0.1s ease-in;
+
+    a:hover,svg:hover {
+      color: blogster.$main-color;
+    }
+  }
+
+  a svg {
+    height: 30px;
+  }
+
+}

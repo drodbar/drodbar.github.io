@@ -1,0 +1,2 @@
+web: JEKYLL_ENV=development bundle exec jekyll serve --watch --drafts --incremental
+assets: npm run watch

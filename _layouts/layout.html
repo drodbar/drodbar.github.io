@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<body class="d-flex flex-column min-vh-100">
+  {% include navbar.html %}
+
+  <div class="container" id="{{ page.title }}">
+    {{ content }}
+  </div>
+
+  {% include analytics.html %}
+  {% include footer.html %}
+  <script src="{{ site.baseurl }}/assets/dist/main.min.js">console.log("load script")</script>
+</body>

@@ -1,0 +1,28 @@
+<ul class="social">
+  <li id="copyleft">
+    {{ site.time | date: '%Y' }}
+  </li>
+  <li id="authorname">
+   {{ site.title }}
+  </li>
+  <li>
+    <a href="https://github.com/{{ site.author.github }}" target="_blank">
+      {% include github.svg %}
+    </a>
+  </li>
+ <li>
+    <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+      {% include twitter.svg %}
+    </a>
+  </li>
+  <li>
+    <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank">
+      {% include linkedin.svg %}
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.baseurl }}/feed/" target="_blank">
+      {% include feed.svg %}
+    </a>
+  </li>
+</ul>

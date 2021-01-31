@@ -1,0 +1,15 @@
+<section class="content">
+  <h1>{{ archive_title }}</h1>
+  <ul class="listing">
+    {{ archive_posts }}
+    {% for post in archive_posts %}
+    <li>
+      <span>{{ post.date | default: "" | date: "%B %e, %Y" }}</span>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ archive_title }}</a>
+      {% for category in post.categories %}
+      <a href="{{ site.baseurl }}/{{ category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

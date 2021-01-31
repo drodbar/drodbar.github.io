@@ -1,0 +1,18 @@
+---
+layout: layout
+---
+
+<section class="content">
+  <h1>{{ page.title }}</h1>
+  <ul class="listing">
+    {% for post in site.categories[page.category] %}
+    <li>
+      <span>{{ post.date | default: "" | date: "%B %e, %Y" }}</span>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      {% for category in post.categories %}
+      <a href="{{ site.baseurl }}/{{ category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

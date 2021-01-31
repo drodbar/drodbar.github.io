@@ -1,0 +1,451 @@
+@charset 'UTF-8';
+
+@use 'blogster';
+
+@import 'bootstrap/scss/bootstrap';
+
+@import 'navbar';
+@import 'variables';
+@import 'footer';
+@import 'pygments';
+
+
+$font-family: "-apple-system,pt sans,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif";
+$font-size-base: 15px;
+$headings-font-weight: 100;
+
+
+
+.container {
+  background: white;
+  opacity: 1;
+  max-width: 820px;
+  border-left: blogster.$navlink-color blogster.$borderleft solid;
+  border-right: blogster.$navlink-color blogster.$borderright solid;
+}
+
+body {
+  background: linear-gradient( rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/solen-feyissa-sqim3_0-siM-unsplash.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  //background-color: blogster.$footer-color;
+  //padding-top: 50px;
+  a {
+    text-transform: none;
+    color: #444444;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      //font-weight: $font-weight-bold;
+      color: blogster.$main-color;
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 800;
+  a {
+    color: inherit;
+    cursor: default;
+    &:hover, &:focus {
+      pointer-events: none;
+      cursor: pointer;
+      color: inherit;
+    }
+  }
+}
+
+h2,h3,h4,h5,h6 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+#main-container {
+  background-color: black;
+}
+
+article,
+.content {
+
+  height: 100%;
+  min-height: 100%;
+  padding: 30px 10px;
+  max-width: 820px;
+  img {
+    max-width: 70%;
+    max-height: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    &.noclip {
+      clear: both;
+      display: inline-block;
+    }
+  }
+  h1:first-child {
+    padding-top: 20px;
+  }
+  h1 a {
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+  section.byline {
+    font-size: 0.8em;
+    padding-bottom: 65px;
+  }
+  &.about p,
+  &.error {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.3em;
+    font-weight: 100;
+  }
+  &.error h1 {
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 10em;
+    font-weight: bold;
+    text-shadow: 0px 1px 5px #aaa;
+  }
+  div.pull {
+    padding-top: 120px;
+  }
+}
+
+
+ul.listing {
+  margin: 0 0 25px 0;
+  padding: 0;
+  padding-top: 65pt;
+  li {
+    list-style-type: none;
+    padding: 7px 5px;
+    border-bottom: 1px solid #EEE;
+    line-height: 1.5rem;
+    span {
+      float: right;
+      font-size: 12px;
+      //color: #999;
+    }
+    a {
+      font-weight: 300;
+      font-size: 1.5em;
+
+    }
+  }
+}
+
+.btn.btn-blogster {
+  font-size: 1rem;
+}
+
+.colorizator {
+  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%); /* Chrome 19+ & Safari 6+ */
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  &:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+  }
+  float: left;
+  background: white;
+  clip-path: polygon(3.1% 17.92%, 13.36% 9.17%, 18.8% 1.61%, 38.58% -0.32%, 36.72% 8.79%, 42.57% 7.21%, 44.67% 15.28%, 50.24% 21.67%, 52.54% 28.72%, 51.53% 46.46%, 50.82% 54.8%, 52.13% 67.16%, 49.58% 79.06%, 60.71% 86.24%, 81.53% 88.36%, 89.76% 91.69%, 100% 100%, 0% 100%, 10.99% 86.24%, 8.12% 80.66%, 2.83% 60.57%, 0.25% 50.94%, 0.28% 45.85%, -1.05% 31.94%);;
+  shape-outside: polygon(0% 0%, 60% 0%, 60% 75%, 90% 85%, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 767px) {
+  #footer .col-span-2.next {
+    margin-top: 30px;
+  }
+}
+
+
+/* bytedude style */
+
+$nimbus-lightest-green: #8fbc8f;
+$nimbus-light-green:    #9ccc65;
+$nimbus-green:          #6aaf50;
+$nimbus-dark-green:     #1d9a79;
+$nimbus-green-bg:       #042b11;
+$nimbus-light-blue:     #68a5e9;
+$nimbus-blue:           #5180b3;
+$nimbus-blue-bg:        #112b47;
+$nimbus-orange:         #df9522;
+$nimbus-tan:            #bdbc61;
+$nimbus-dark-tan:       #7d7c61;
+$nimbus-bright-yellow:  #fffe0a;
+$nimbus-yellow:         #baba36;
+$nimbus-purple:         #ab75c3;
+$nimbus-light-gray:     #858585;
+$nimbus-gray:           #757575;
+$nimbus-dark-gray:      #656565;
+$nimbus-darker-gray:    #454545;
+$nimbus-darkest-gray:   #252525;
+$nimbus-blue-gray:      #cecece;
+$nimbus-brown:          #987654;
+$nimbus-red:            #d65946;
+$nimbus-dark-red:       #9d2512;
+
+$nimbus-bg:             #1a1a1a;
+$nimbus-fg:             #bdbdb3;
+$nimbus-fringe:         #262626;
+
+$spacing-unit:     30px !default;
+
+/* Define color palette */
+
+$gray:             #828282 !default;
+/* $mild-gray:        lighten($gray, 20%) !default;
+$light-gray:       lighten($gray, 30%) !default;
+$lighter-gray:     lighten($gray, 40%) !default;
+$lightest-gray:    #f7f7f7 !default;
+$dark-gray:        darken($gray, 15%) !default;
+
+$blue:             #2a7ae2 !default;
+$light-blue:       lighten($blue, 10%) !default;
+$dark-blue:        darken($blue, 10%) !default;
+$darker-blue:      darken($blue, 20%) !default;
+$darkerer-blue:    darken($blue, 30%) !default;
+$red:              #d65946 !default;
+$lightest-red:     #fffafa !default;
+$green:            #6aaf50 !default;
+$light-purple:     #eef !default;
+$lightest-purple:  #f1f1ff !default; */
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+      @content;
+  }
+}
+
+/* Block code, highlight from bytedude */
+figure.highlight, div.highlight {
+  position: relative;
+
+  pre {
+      background-color: $nimbus-bg;
+
+      code {
+          background-color: $nimbus-bg;
+          color: $nimbus-fg;
+
+          counter-reset: code;
+          display: block;
+          line-height: 1.5;
+
+          /* Display language name */
+          &[data-lang]::before {
+              // location and content
+              content: attr(data-lang);
+              position: absolute;
+              right: 2px;
+              top: 2px;
+              padding-left: $spacing-unit / 4;
+              padding-right: $spacing-unit / 4;
+
+              // shape and border
+              /*
+              border: 1px solid $gray;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+              border-bottom-left-radius: 5px;
+              border-bottom-right-radius: 5px;
+              */
+
+              //min-width: 40px;
+              text-align: center;
+              font-size: $font-size-base*0.8;
+
+              color: $nimbus-orange;
+              background-color: $nimbus-bg;
+
+              @include media-query(300px) {
+                  visibility: hidden;
+              }
+          }
+
+          div {
+              counter-increment: code;
+
+              /* Line numbers */
+              &::before {
+                  color: $nimbus-yellow;
+                  content: counter(code);
+
+                  width: 14px;
+                  text-align: right;
+                  font-size: $font-size-base*0.8;
+
+                  /* Add a nice border */
+                  display: inline-block;
+                  padding-right: $spacing-unit * 0.25;
+                  margin-right: $spacing-unit * 0.4;
+                  border-right: 1px solid $nimbus-dark-gray;
+
+                  /* For older browsers and Safari */
+                  -webkit-touch-callout: none;
+                  -webkit-user-select: none;
+                  -khtml-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none;
+              }
+          }
+      }
+  }
+}
+
+.btn-blogster {
+  vertical-align: baseline;
+  // color
+  color: blogster.$main-color;
+  border-color: blogster.$main-color;
+  // shape
+  padding: .0rem .2rem;
+  border-radius: .4rem;
+  // margin
+  margin-left: 5px;
+
+  transition:  color 0.15s easy-in-out, background-color 0.1s easy-out;
+  -webkit-transition:  color 0.15s easy-in-out, background-color 0.1s easy-out;
+  &:hover {
+    background-color: blogster.$main-color;
+    color: white;
+  }
+  a {
+    font-weight: 200;
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+////
+$mild-gray: rgb(201, 201, 201);
+$lightest-gray: #ccc;
+$link: blogster.$main-color;
+////
+
+ul#markdown-toc {
+  padding: $spacing-unit / 4 $spacing-unit $spacing-unit / 4 $spacing-unit;
+  border: 1px solid $lightest-gray;
+  margin-left: $spacing-unit / 2;
+  margin-right: $spacing-unit / 2;
+
+  font-size: $base-font-size*0.8;
+  background-color: blogster.$toc-color;
+
+
+  ul {
+    padding-left: $spacing-unit * 0.8;
+  }
+
+  li {
+      padding: 0;
+      margin: 0;
+      //list-style: circle;
+  }
+
+  li a {
+    color: $link;
+    &:visited {
+      color: darken($link, 10%);
+    }
+  }
+}
+
+/* Spoilers */
+
+.spoiler {
+  cursor: pointer;
+  // Make the spoiler always on the line before the displayed text.
+  // `display: block` makes the entire line with the spoiler clickable.
+  // `display: inline-block` makes the TOC appear on the same line.
+  display: table;
+
+  color: $link;
+  margin-bottom: $spacing-unit / 2;
+  //margin-bottom: 30pt;
+
+  /* Prevent text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input#spoiler-check {
+  display: none; /* hide the checkboxes */
+}
+
+/* Show */
+input ~ .spoiler {
+  &::before {
+      content: '[ ';
+  }
+
+  &::after {
+      content: ' ]';
+  }
+
+  ~ ul#markdown-toc {
+      display: none;
+  }
+}
+
+/* Hide */
+input:checked ~ .spoiler {
+  &::before {
+      content: '- ';
+  }
+
+  &::after {
+      content: ' -';
+  }
+
+  ~ ul#markdown-toc {
+      display: inline-block;
+  }
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: $small-font-size;
+
+  p {
+      flex: 1 1 0;
+      width: 45%;
+
+      &:first-child {
+          padding-right: $spacing-unit / 4;
+      }
+
+      &:last-child {
+          padding-left: $spacing-unit / 4;
+          text-align: right;
+      }
+  }
+}
+
+.post-top {
+  display: flex;
+  font-size: $small-font-size;
+  justify-content: flex-end;
+
+  p {
+      &:first-child {
+          padding-left: $spacing-unit / 4;
+          text-align: right;
+      }
+  }
+}

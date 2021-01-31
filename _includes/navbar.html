@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-blog">
+  <div class="container">
+
+    <a class="navbar-brand" href="{{ site.baseurl }}/">
+      {% include drodbar.svg %}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{{ site.baseurl }}/">Posts</a>
+        <a class="nav-item nav-link" href="{{ site.baseurl }}/{{ site.category_dir }}/">Categories</a>
+        <a class="nav-item nav-link" href="{{ site.baseurl }}/about/">About</a>
+      </div>
+    </div>
+  </div>
+</nav>

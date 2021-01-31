@@ -1,0 +1,64 @@
+# Site config
+title : drodbar
+description: "Some thoughts, code snippets, brief howtos and such for my personal reuse and at everybody's disposal by Diego Rodriguez."
+url: drodbar.github.io
+source: 
+
+author :
+  name : Diego Rodriguez Bartolome
+  email: di.rod.bar@gmail.com
+  github : drodbar
+  twitter : wikiego
+  linkedin: diego-rodriguez-bartolome
+
+  plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-tidy
+
+# Build options
+permalink: /:title
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - Procfile.dev
+  - package.json
+  - .jekyll-metadata
+  - node_modules
+  - assets/js
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Highlighting
+highlighter: rouge
+
+## Sass
+#sass:
+#  sass_dir: _sass
+#  load_paths:
+#    - _sass
+#    - node_modules
+#  style:
+#    compressed
+
+# Tidy
+jekyll_tidy:
+  exclude: []
+  compress_html: true
+
+# Analytics
+analytics: UA-164176134-1
+
+# Seo-tag
+google_verify: s5cphR0Uq3SvF-ZekzBJebnW3zafkMmKzb3tEeJpnC0
+
+category_dir: category

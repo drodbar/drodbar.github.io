@@ -1,0 +1,38 @@
+@use 'blogster';
+
+.navbar {
+  padding: 0pt;
+}
+
+.navbar-blog {
+  font-weight: 500;
+  //background-color: blogster.$footer-color;
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+  padding: 0pt;
+  border-bottom: blogster.$navlink-color blogster.$borderbottom solid;
+  line-height: 1em;
+  .container {
+    //background: #000;
+    opacity: 80%;
+  }
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+  font-size: 1.0rem;
+  padding: 0.0rem;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: blogster.$navlink-color;
+  &:hover {
+    color: lighten(blogster.$main-color, 10%);
+  }
+}
+
