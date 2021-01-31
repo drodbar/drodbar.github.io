@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Hello world"
+category: ["programming"]
 toc: true
-category: [programming]
 ---
 
 * Table of contents.

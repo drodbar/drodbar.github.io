@@ -21,6 +21,7 @@ permalink: /:title
 
 include:
   - js
+  - _posts
 
 exclude:
   - Gemfile*
