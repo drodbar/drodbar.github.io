@@ -32,6 +32,11 @@ exclude:
   - node_modules
   - assets/js
 
+feed:
+  path: feed.xml
+
+safe: false
+
 # Markdown
 markdown: kramdown
 kramdown:
