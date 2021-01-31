@@ -2,6 +2,6 @@
     <span>{{ post.date | default: "" | date: "%B %e, %Y" }}</span>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     {% for category in post.categories %}
-    <a href="{{ site.url }}/{{ site.category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
+    <a href="/{{ site.category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
     {% endfor %}
 </li>

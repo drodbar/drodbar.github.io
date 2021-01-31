@@ -9,7 +9,7 @@ layout: layout
 
     <span>{{ page.date | date: "%A, %B %e, %Y" }}</span>
     {% for category in page.categories %}
-    <a href="{{ site.url }}/{{ site.category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
+    <a href="/{{ site.category_dir }}/{{ category }}" class="btn btn-blogster">{{ category }}</a>
     {%- endfor -%}
   </section>
 

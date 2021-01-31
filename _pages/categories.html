@@ -16,7 +16,7 @@ permalink: /category
             {%- if category_posts > 0 -%}
             <li>
                 <span class="category-count">{{ category_posts }} posts</span>
-                 <a class="btn btn-blogster" href="{{ page.url }}/{{ category_name }}">{{ category_name | escape }}</a>
+                 <a class="btn btn-blogster" href="/{{ category_name }}">{{ category_name | escape }}</a>
             </li>
             {%- endif -%}
     {%- endfor -%}

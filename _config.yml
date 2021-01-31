@@ -1,7 +1,7 @@
 # Site config
 title : drodbar
 description: "Some thoughts, code snippets, brief howtos and such for my personal reuse and at everybody's disposal by Diego Rodriguez."
-url: drodbar.github.io
+url: "https://drodbar.github.io"
 
 author : Diego Rodriguez Bartolome
 author_details:
@@ -14,7 +14,6 @@ author_details:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-tidy
 
 # Build options
 permalink: /:title
@@ -32,10 +31,6 @@ exclude:
   - node_modules
   - assets/js
 
-feed:
-  path: feed.xml
-
-safe: false
 
 # Markdown
 markdown: kramdown
@@ -56,9 +51,9 @@ highlighter: rouge
 #    compressed
 
 # Tidy
-jekyll_tidy:
-  exclude: []
-  compress_html: true
+#jekyll_tidy:
+#  exclude: []
+#  compress_html: true
 
 # Analytics
 analytics: UA-164176134-1
