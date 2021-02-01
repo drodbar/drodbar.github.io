@@ -96,36 +96,56 @@ task :icons do
         .write(img_name)
   end
   puts "Cleaning up #{origin}...".red
-  File.delete origin if File.exist?(origin)
+  File.delete origin if File.exist? origin
 end # task :icons
+
+
+desc "Install npm dependencies"
+task :npm do
+  system("npm install")
+end # task :npm
 
 
 desc "Install libs required by theme"
 task :js do
+  jquery_js = "node_modules/jquery/dist/jquery.min.js"
+  bootstrap_js = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  bootstrap_js_map = "#{bootstrap_js}.map"
   puts "Downloading and installing required javascript plugins".blue
-  system('npm install')
-  ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-   "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
-   "node_modules/jquery/dist/jquery.min.js"].each do |js_lib|
-     puts "Copy #{js_lib} to js/"
-     FileUtils.cp(js_lib, 'js')
+  [jquery_js, bootstrap_js, bootstrap_js_map].each do |js_lib|
+     abort "[ERRROR #{js_lib} not found! Try running rake npm]" \
+       unless File.exists? js_lib
+     FileUtils.cp js_lib, 'js', :verbose => true
    end
 end # task :js
 
 
+desc "Install theme's third party css"
+task :css do
+  bootstrap_src = 'node_modules/bootstrap/scss'
+  bootstrap_dst = '_sass/bootstrap'
+  abort "[ERROR] #{bootstrap_src} not found! Try running rake npm".red \
+    unless Dir.exists? bootstrap_src
+  puts "Copy bootstrap scss to _sass folder".blue
+  FileUtils.mkdir_p bootstrap_dst
+  FileUtils.cp_r bootstrap_src, bootstrap_dst, :verbose => true
+end # task :ccs
+
+
 desc "Prepare repository (icons + js)"
-task :prepare => [:icons, :js]
+task :prepare => [:icons, :js, :css]
 
 
 desc "Clean site"
 task :clean do
   puts "Clean Jekyll's site".red
   system('bundle exec jekyll clean')
+  FileUtils.rm_rf "node_modules", :verbose => true
 end # task :clean
 
 desc "Purge site"
 task :purge => :clean do
   puts "Purge Jekyll's site".red
-  system('rm -vrf node_modules/ favicon.ico images/apple-touch-ico*')
+  system('rm -vrf favicon.ico images/apple-touch-ico*')
 end # task :purge
 
