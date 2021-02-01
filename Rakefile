@@ -140,11 +140,12 @@ desc "Clean site"
 task :clean do
   puts "Clean Jekyll's site".red
   system('bundle exec jekyll clean')
+  FileUtils.rm_rf "node_modules", :verbose => true
 end # task :clean
 
 desc "Purge site"
 task :purge => :clean do
   puts "Purge Jekyll's site".red
-  system('rm -vrf node_modules/ favicon.ico images/apple-touch-ico*')
+  system('rm -vrf favicon.ico images/apple-touch-ico*')
 end # task :purge
 
