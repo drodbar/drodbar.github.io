@@ -113,8 +113,16 @@ task :js do
 end # task :js
 
 
+desc "Install theme's third party css"
+task :css => :js do
+  puts "Copy bootstrap scss to _sass folder".blue
+  Dir.mkdir 'scss/bootstrap'
+  FileUtils.cp Dir.glob("node_modules/bootstrap/scss/*"), 'css/bootstrap/'
+end # task :ccs
+
+
 desc "Prepare repository (icons + js)"
-task :prepare => [:icons, :js]
+task :prepare => [:icons, :js, :css]
 
 
 desc "Clean site"
