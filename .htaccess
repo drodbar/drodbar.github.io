@@ -1,0 +1,8 @@
+---
+layout: null
+---
+
+<FilesMatch "\.html$">
+  H2PushResource add /js/blogster.{{site.build}}.js critical
+  H2PushResource add /css/main.{{site.build}}.css
+</FilesMatch>

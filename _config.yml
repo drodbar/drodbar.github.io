@@ -22,6 +22,7 @@ permalink: /:title
 include:
   - js
   - _posts
+  - ".htaccess"
 
 exclude:
   - Gemfile*
@@ -62,3 +63,5 @@ analytics: UA-164176134-1
 google_verify: s5cphR0Uq3SvF-ZekzBJebnW3zafkMmKzb3tEeJpnC0
 
 category_dir: category
+
+build: 20210615
