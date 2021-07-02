@@ -22,7 +22,6 @@ permalink: /:title
 include:
   - js
   - _posts
-  - ".htaccess"
 
 exclude:
   - Gemfile*
